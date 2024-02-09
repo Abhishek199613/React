@@ -1,0 +1,138 @@
+# What is Emmet?
+Emmet is a powerful toolkit for web developers and front-end designers that significantly enhances HTML and CSS
+workflow. Originally known as Zen Coding, Emmet provides shortcuts and abbreviations that allow developers to
+write HTML and CSS code more quickly and efficiently.
+The key features of Emmet include:
+1. Abbreviations: Emmet allows you to use short abbreviations to generate HTML and CSS code.
+For example, typing ul>li*3 and then expanding it with the appropriate Emmet shortcut will generate an
+unordered list with three list items.
+2. Dynamic Content Generation: Emmet allows for the quick generation of repetitive structures such as
+lists, tables, and grids. You can specify the number of elements or items you want,
+and Emmet will generate them accordingly.
+3.Nested Elements: Emmet supports nesting of elements, making it easy to create complex structures with
+minimal effort. You can nest elements within each other by using child selectors, sibling selectors, and more.
+4. CSS Abbreviations: In addition to HTML abbreviations, Emmet provides shortcuts for writing CSS properties
+and values. This includes shorthand properties and vendor prefixes, allowing developers to write CSS code more
+efficiently.
+Emmet is supported by various text editors and integrated development environments (IDEs),
+including Visual Studio Code, Sublime Text, Atom, and others. It significantly speeds up the coding process 
+and helps developers write cleaner, more concise code. Emmet is widely used in the web development community and 
+has become an essential tool for many front-end developers.
+
+
+# Difference between library and framework.
+A library provides reusable functions and components that developers can call to perform specific tasks, allowing 
+flexibility and control over the overall structure of the application. In contrast, a framework sets the structure 
+and flow of an application, dictating how developers should build and organize their code, often providing built-in 
+functionalities and enforcing certain conventions.
+
+
+# Why is React known as React?
+React is named "React" because it reflects its core philosophy of providing a reactive programming model 
+for building user interfaces. The name "React" emphasizes the idea that user interfaces should react 
+dynamically to changes in data and state, updating the UI components efficiently and effectively. 
+It's designed to make it easier for developers to build interactive and responsive user interfaces by 
+efficiently managing the updates and rendering process based on changes in the application's data.
+
+
+# What is diference between React and ReactDOM ?
+React and ReactDOM are two related but distinct libraries in the React ecosystem:
+1. React: React is a JavaScript library for building user interfaces. It provides a component-based
+architecture where developers can create reusable UI components that encapsulate their own state and behavior. 
+React focuses on rendering components efficiently and managing their lifecycle. It also introduces the concept of 
+virtual DOM, which helps optimize the rendering process by minimizing the number of updates to the actual DOM.
+2.ReactDOM: ReactDOM is a package that serves as the glue between React and the DOM (Document Object Model). 
+It provides the necessary bindings and APIs to render React components into the DOM and interact with them. 
+ReactDOM contains methods like ReactDOM.render() that are used to mount React components onto a specific DOM node, 
+as well as methods for updating and unmounting components.
+In summary, React is the core library for building UI components and managing their behavior, 
+while ReactDOM provides the bridge between React components and the browser's DOM, enabling the rendering and 
+interaction of React components within a web application.
+
+
+# What is CDN? Why do we use it?
+CDN stands for Content Delivery Network. It is a network of geographically distributed servers that work together to 
+deliver web content to users more efficiently. CDNs are designed to reduce latency, accelerate the delivery 
+of web pages, images, videos, and other content by caching copies of the content in multiple locations 
+around the world.
+When a user requests content from a website or application, the CDN automatically determines the nearest server 
+to the user's location and delivers the content from that server. This reduces the distance the data must travel, 
+resulting in faster load times and better performance.
+CDNs also help to improve the reliability and scalability of websites and web applications by distributing 
+traffic across multiple servers. Additionally, they can help mitigate distributed denial of service (DDoS) attacks 
+by spreading incoming traffic across multiple servers and filtering out malicious requests.
+Overall, CDNs play a crucial role in optimizing the delivery of web content and improving the user experience for 
+visitors to websites and applications.
+
+# What is crossorigin in script tag?
+The crossorigin attribute in the <script> tag is used to specify how the browser should handle loading scripts 
+from external domains that have different origins (i.e., different domain, protocol, or port). It is primarily 
+used for scripts loaded from domains other than the one hosting the current web page.
+
+Here are the possible values for the crossorigin attribute:
+
+Anonymous: This is the default value if the attribute is present but no value is specified. 
+When crossorigin="anonymous", the browser loads the script without sending any credentials 
+(such as cookies or HTTP authentication) along with the request. This is suitable for scripts that are 
+intended to be shared across multiple sites.
+
+Example:
+
+html
+Copy code
+<script src="https://example.com/script.js" crossorigin="anonymous"></script>
+Use Credentials: When crossorigin="use-credentials", the browser will include any credentials associated 
+with the current browsing context (such as cookies) when fetching the script. This is useful when the script 
+requires authentication credentials from the server.
+
+Example:
+
+html
+Copy code
+<script src="https://example.com/script.js" crossorigin="use-credentials"></script>
+The crossorigin attribute helps enforce the Cross-Origin Resource Sharing (CORS) policy, 
+which is a security feature implemented by web browsers to prevent scripts on one domain from 
+making unauthorized requests to resources on another domain. By specifying the crossorigin attribute 
+appropriately, you can ensure that your scripts are loaded and executed securely according to the CORS policy.
+
+
+# What is difference between react.development.js and react.production.js files via CDN?
+The difference between react.development.js and react.production.js files lies in their optimization levels 
+and error handling mechanisms. react.development.js is larger and includes helpful error messages 
+and development-oriented features, aiding debugging. In contrast, react.production.js is smaller, optimized for 
+production, stripped of development-only features, and minified for performance, enhancing the efficiency of web 
+applications in production environments.
+
+
+
+# What is async and defer?
+The async and defer attributes are both used with the <script> element in HTML to control the loading and 
+execution of external JavaScript files, but they have different behaviors:
+Async Attribute:
+Scripts with the async attribute are loaded asynchronously while the HTML parsing and rendering process continues.
+The script is executed as soon as it's downloaded, even if the HTML parsing isn't complete.
+The order of execution may not be guaranteed, as the script that finishes downloading first will execute first.
+Useful for non-blocking scripts that don't rely on other scripts or DOM elements.
+Defer Attribute:
+Scripts with the defer attribute are also loaded asynchronously, but they are executed only after the HTML 
+parsing is complete.
+Deferred scripts are executed in the order they appear in the HTML document.
+defer ensures that the script doesn't delay the DOMContentLoaded event, making it suitable for scripts that rely on 
+DOM elements.
+It's generally recommended for scripts that need to be executed after the document has been parsed but 
+don't need to be executed immediately.
+In summary, async is used for scripts that can be executed independently and as soon as possible, while defer is 
+used for scripts that need to wait for the HTML document to be parsed but can still load asynchronously.
+
+
+
+# Arrow Functions in JS
+Arrow functions are a concise syntax introduced in ECMAScript 6 (ES6) for writing anonymous functions in 
+JavaScript. They provide a more compact and cleaner way to write functions compared to traditional function 
+expressions.
+Key features of arrow functions:
+Syntax: Arrow functions are defined using the => syntax, also known as the "fat arrow" syntax.
+Implicit Return: If the function body consists of a single expression, the return statement is implicit. 
+This means you don't need to use the return keyword explicitly.
+Lexical this Binding: Arrow functions do not bind their own this value but inherit the this value from the 
+surrounding code. This behavior can help avoid common pitfalls with this in JavaScript.
