@@ -1,0 +1,283 @@
+- What is `NPM`?
+-   It is a package manager for JavaScript programming language and is the default package manager for the Node.js runtime environment. NPM is used to install, share, and manage dependencies (libraries, frameworks, tools, etc.) for Node.js projects. It allows developers to easily add and update packages in their projects, as well as manage project dependencies efficiently. NPM also includes a command-line interface (CLI) that developers use to interact with the package manager and perform various tasks such as installing packages, updating packages, publishing packages, etc.
+
+
+- What is `Parcel/Webpack`? Why do we need it?
+-   Parcel and Webpack are both popular bundling tools used in modern web development to package and bundle various assets such as JavaScript files, CSS files, images, and more, into a format that is optimized for deployment in web applications.
+
+    Here's a brief overview of each:
+
+    Parcel:
+    Parcel is a zero-config web application bundler. It aims to provide developers with a simple and fast way to bundle their web application assets without the need for configuration files. Parcel supports a wide range of asset types out of the box, including JavaScript, CSS, HTML, images, and more. It automatically analyzes project dependencies and builds a dependency graph, which it uses to bundle the application efficiently. Parcel is known for its ease of use and fast build times, making it a popular choice for developers who prefer simplicity and convenience.
+
+    Webpack:
+    Webpack is a highly configurable module bundler for JavaScript applications. It allows developers to define complex bundling configurations using webpack configuration files (webpack.config.js). Webpack provides a powerful plugin system that allows developers to extend its functionality and customize the bundling process according to their specific requirements. Webpack is widely used in large-scale web development projects due to its flexibility, extensibility, and support for a wide range of loaders and plugins.
+
+    We need bundling tools like Parcel and Webpack in web development for several reasons:
+
+    Dependency Management: They help manage dependencies between different modules and packages used in the project.
+    Optimization: They optimize assets for performance by minifying, compressing, and bundling them together.
+    Code Splitting: They support code splitting techniques, allowing developers to split the codebase into smaller chunks that can be loaded asynchronously, improving page load times.
+    Module System Support: They support modern JavaScript module systems such as CommonJS, AMD, and ES modules, allowing developers to organize their code using modular approaches.
+    Integration with Development Workflow: They integrate seamlessly with development workflows, enabling features like hot module replacement (HMR) for faster development iterations.
+    Asset Transformation: They allow developers to transform and process various types of assets such as CSS, images, and fonts, enabling support for modern web development practices like CSS preprocessing and image optimization.
+    In summary, bundling tools like Parcel and Webpack play a crucial role in modern web development by simplifying asset management, optimizing performance, and enhancing the development workflow.
+
+- What is `.parcel-cache`
+- The .parcel-cache directory is a directory created by Parcel, the web application bundler, during the build process. It is used to cache compiled assets and other intermediate files generated during the bundling process.
+    When you run the Parcel bundler to build your web application, it analyzes your project's dependencies, processes various assets such as JavaScript files, CSS files, images, etc., and generates bundled output files ready for deployment. During this process, Parcel may create temporary files and cache certain intermediate results to improve build performance.
+    The .parcel-cache directory typically contains cached data such as compiled JavaScript bundles, processed CSS files, and other artifacts that Parcel generates during the build process. This cache helps Parcel avoid redundant work and speeds up subsequent builds, especially when working on large projects with many dependencies.
+    Developers can usually safely ignore the .parcel-cache directory when managing their project, as it's automatically generated and managed by Parcel. However, in some cases, you may want to delete the .parcel-cache directory to force a clean build or to reclaim disk space, especially if you encounter issues related to cached data becoming stale or corrupted. Parcel will recreate the .parcel-cache directory as needed during subsequent builds.
+
+
+- What is `npx` ?
+- npx is a command-line tool that comes bundled with npm (Node Package Manager) starting from version 5.2.0. It allows users to execute Node.js packages directly, without the need to install them globally or locally.
+
+    Here's how npx works:
+    Execute Packages: With npx, you can run Node.js packages as if they were installed globally on your system, even if they're not. npx downloads and installs the specified package temporarily, executes the command provided by the package, and then removes the package.
+    Run Local Packages: If you have a package installed locally in your project's node_modules directory, npx will prioritize running the locally installed version over globally installed ones.
+    Execute Specific Versions: You can also specify the version of the package you want to execute. For instance, you can run a specific version of a package without needing to install it globally or manage it manually.
+    npx is particularly useful for running commands from packages that you don't use frequently or that you don't want to install globally. It simplifies the process of running one-off commands without cluttering your global or local package installations.
+
+- What is difference between `dependencies` vs `devDependencies`
+-    In npm (Node Package Manager), there are two main types of dependencies: dependencies and devDependencies. They serve different purposes and are used in different contexts:
+
+    Dependencies:
+
+    dependencies are packages that are required for the application to run in production.
+    These are the packages that are necessary for the application to function properly when deployed.
+    They include libraries, frameworks, utilities, and other packages that are essential for the application's runtime behavior.
+    Examples of dependencies might include frameworks like Express.js for server-side applications, React or Vue for front-end applications, database drivers, utility libraries, etc.
+    DevDependencies:
+
+    devDependencies are packages that are only needed for development and testing purposes.
+    These packages are not required for the application to run in production but are necessary during development, testing, and building processes.
+    They include tools, libraries, test frameworks, transpilers, linters, bundlers, etc., that help with the development workflow and ensure code quality.
+    Examples of devDependencies might include testing frameworks like Jest or Mocha, build tools like webpack or gulp, code linters like ESLint, development servers, etc.
+    In summary, while both dependencies and devDependencies are specified in the package.json file and managed by npm, they serve different roles in the development and deployment lifecycle of a Node.js application. Dependencies are essential for the application to function in production, while devDependencies are only needed during development and testing. When you deploy your application, npm typically installs only the dependencies and not the devDependencies, as they are not needed for the application's runtime behavior.
+
+
+- if parcel is used as dev dependency then what is the use of "npx parcel build filename" command used for ?
+- If Parcel is installed as a dev dependency in your project, you can use npx parcel to run the Parcel bundler without having to install it globally or reference its specific location in your project.
+    The command npx parcel build filename is used to build your project using Parcel. Here's what each part of the command does:
+    npx: This is a command-line utility that comes with npm, allowing you to execute npm packages. It searches for executables in your project's node_modules/.bin directory and also installs packages temporarily if they're not installed locally.
+    parcel: This is the name of the Parcel bundler command-line interface (CLI). When you run npx parcel, it looks for the parcel executable in your project's dependencies.
+    build: This is an argument passed to Parcel, indicating that you want to build your project. When you run npx parcel build, Parcel looks for your project's entry file (typically an HTML, JavaScript, or CSS file), analyzes its dependencies, and bundles them together for production use.
+    filename: This is the entry file for your application. It could be an HTML file that references your JavaScript and CSS files, or it could be a JavaScript file if you're building a single-page application.
+    So, when you run npx parcel build filename, Parcel will start the bundling process based on the configuration and dependencies defined in your project, producing optimized output files ready for deployment. It will typically create a dist directory where the bundled files will be stored.
+
+- What is Tree Shaking?
+- Tree shaking is a term used in the context of JavaScript module bundlers like Webpack, Rollup, and Parcel. It refers to the process of removing unused code (dead code) from your application's bundle during the bundling process.
+    The name "tree shaking" comes from the idea of shaking a tree and causing the dead leaves (unused code) to fall off while keeping the healthy branches (used code) intact.
+    Here's how tree shaking works:
+    ES6 Module Syntax: Tree shaking relies on the ES6 module syntax (import and export statements) to analyze the dependencies between modules in your application.
+    Static Analysis: During the bundling process, the module bundler (e.g., Webpack) performs static analysis of your codebase to determine which parts of the code are actually imported and used by your application.
+    Removal of Unused Code: Any code that is not imported by any part of your application is considered unused or dead code. Tree shaking identifies and removes this dead code from the final bundle, resulting in a smaller bundle size and improved performance.
+    Tree shaking is particularly beneficial for larger JavaScript applications and libraries where not all code paths are executed in every scenario. By eliminating unused code, tree shaking reduces the size of the JavaScript bundle that needs to be downloaded and parsed by the browser, leading to faster load times and better runtime performance for the application.
+    However, it's important to note that tree shaking works best with code written in a modular and side-effect-free manner. Code with side effects (e.g., code that mutates global variables, performs I/O operations, etc.) may not be safely removed by the tree shaking process, as it's challenging to determine the side effects statically. Therefore, adhering to best practices for writing modular, pure functions and using ES6 module syntax can help maximize the effectiveness of tree shaking in your JavaScript applications.
+
+
+- What is Hot Module Replacement?
+- Hot Module Replacement (HMR) is a feature commonly found in modern web development frameworks and build tools such as webpack and Parcel. It allows developers to inject updated modules into a running application without requiring a full page refresh.
+    Here's how Hot Module Replacement works:
+    Initial Application Load: When you start your development server, the application loads in the browser as usual.
+    Tracking Module Dependencies: The build tool (e.g., webpack) keeps track of the dependencies between modules in your application. It understands which modules depend on which others.
+    Module Replacement: When you make changes to a module's code and save the file, the build tool detects the changes. Instead of refreshing the entire page, it sends only the updated module to the browser.
+    Applying Changes: The browser receives the updated module and applies the changes in real-time without refreshing the entire page. This means that the application state (such as form input values, scroll position, etc.) is preserved, and the user experience is uninterrupted.
+    Preserving State: HMR is smart enough to preserve the application state across module updates. This means that if you've entered data into a form field or navigated to a specific view within your application, those states will be maintained even after module updates.
+    Fast Feedback Loop: HMR significantly speeds up the development process by providing a fast feedback loop. Developers can see the effects of their code changes immediately without waiting for a full page reload, which can save a significant amount of time during the development process.
+    Overall, Hot Module Replacement is a powerful feature that enhances the developer experience by enabling faster iteration cycles and providing a more seamless development workflow. It is especially valuable in large-scale applications where frequent code changes are made and waiting for full page reloads can be time-consuming.
+
+- What is `.gitignore`? What should we add and not add into it?
+- The .gitignore file is a text file used by Git to specify intentionally untracked files that Git should ignore. These untracked files are typically ones generated as part of the build process, temporary files, or files containing sensitive information that should not be committed to the repository.
+    Here's how the .gitignore file works and what you should add and not add to it:
+    What to Add to .gitignore:
+    Temporary Files:
+    Files created by your text editor or IDE, such as .DS_Store (macOS) or Thumbs.db (Windows).
+    Build Artifacts:
+    Generated files or directories resulting from the build process, such as compiled binaries, minified JavaScript files, or transpiled CSS files.
+    Dependency Directories:
+    Directories containing dependencies managed by package managers like node_modules/ (for Node.js projects) or vendor/ (for PHP projects).
+    Environment-specific Files:
+    Configuration files containing environment-specific settings, such as .env files or configuration files for local development environments.
+    User-specific Files:
+    Files containing user-specific settings or configurations that are not shared among team members, such as editor configuration files.
+    Logs and Cache Files:
+    Logs, cache files, or data files that are generated during runtime and don't need to be version-controlled.
+    What Not to Add to .gitignore:
+    Source Code Files:
+    Source code files and project configuration files that are necessary for the project to build and run correctly should not be ignored.
+    Important Configuration Files:
+    Important configuration files that affect the behavior of the application or the development environment should not be ignored.
+    Sensitive Information:
+    While .gitignore can help prevent accidentally committing sensitive information, it's not a substitute for proper handling of sensitive data. Sensitive information like passwords, API keys, and access tokens should be managed using secure methods, such as environment variables or dedicated configuration files that are not tracked by Git.
+    Documentation and README Files:
+    Documentation files, README files, and other important project documentation should not be ignored, as they are essential for understanding and contributing to the project.
+    Licenses and Legal Documents:
+    Files containing project licenses, legal documents, and copyright notices should be included in the repository to ensure compliance and provide transparency to users and contributors.
+    In summary, the .gitignore file is a crucial tool for managing the files that Git tracks in your repository. By specifying which files and directories to ignore, you can keep your repository clean and focused on the essential components of your project while avoiding unnecessary clutter and potential security risks.
+
+- What is the difference between `package.json` and `package-lock.json`
+- package.json and package-lock.json are both files used in Node.js projects, particularly those managed with npm (Node Package Manager). While they serve related purposes, they have distinct roles in managing project dependencies.
+    package.json:
+    Dependency Management:
+    package.json is a metadata file that contains various information about the project, including its name, version, description, entry points, scripts, and most importantly, its dependencies.
+    Dependencies are listed in the dependencies and devDependencies sections of the package.json file.
+    package.json allows developers to specify the project's dependencies and their versions. It also includes information about scripts that can be executed using npm.
+    Handwritten and Maintained:
+    Developers typically write and maintain the package.json file manually.
+    Developers add, update, or remove dependencies directly in the package.json file using npm or yarn commands.
+    package-lock.json:
+    Dependency Locking:
+    package-lock.json is automatically generated by npm and serves as a record of the exact dependency tree that was generated at the time of installation.
+    It includes detailed information about every dependency, including its version, resolved version, integrity hash, and dependency tree structure.
+    The purpose of package-lock.json is to provide deterministic and reproducible builds by locking the installed versions of dependencies.
+    Automatic Generation:
+    package-lock.json is automatically generated and updated by npm whenever npm installs or updates packages.
+    It ensures that every developer working on the project installs the exact same versions of dependencies, preventing inconsistencies between different development environments.
+    Key Differences:
+    Manual vs. Automatic:
+    package.json is manually maintained by developers and contains metadata about the project and its dependencies.
+    package-lock.json is automatically generated and updated by npm to lock the exact versions of dependencies installed in the project.
+    Purpose:
+    package.json defines the project's metadata and dependencies but does not enforce version locking.
+    package-lock.json ensures deterministic and reproducible builds by locking the installed versions of dependencies.
+    In summary, while both package.json and package-lock.json are essential for managing Node.js projects and their dependencies, they serve different purposes. package.json provides metadata and dependency information, while package-lock.json ensures version consistency and reproducibility across different development environments.
+
+- Why should I not modify `package-lock.json`?
+- You should avoid modifying package-lock.json directly for several reasons:
+    Dependency Consistency:
+    package-lock.json is designed to ensure that all developers working on a project install the exact same versions of dependencies. Modifying it manually can introduce inconsistencies and lead to unexpected behavior, especially if different developers have different versions installed.
+    Reproducible Builds:
+    package-lock.json facilitates reproducible builds by locking the specific versions of dependencies used in the project. Modifying it could result in different versions of dependencies being installed across different environments, leading to inconsistencies and potentially breaking the build process.
+    Integrity Checks:
+    package-lock.json includes integrity hashes for each installed package, which ensures that the packages installed in your project have not been tampered with or corrupted. Modifying package-lock.json could compromise the integrity of your project's dependencies.
+    Automatic Updates:
+    package-lock.json is automatically updated by npm whenever dependencies are installed or updated using npm commands. Manual modifications may be overwritten by npm during these updates, leading to confusion and potential conflicts.
+    Maintainability:
+    Modifying package-lock.json directly can make your project harder to maintain and troubleshoot, especially for other developers who may not be aware of the changes you've made. It's best to let npm manage package-lock.json to ensure consistency and reliability.
+    Instead of modifying package-lock.json directly, you should manage dependencies using npm or yarn commands. For example, you can use npm install <package-name>@<version> to install specific versions of packages or update dependencies using npm update. These commands will automatically update package-lock.json while ensuring dependency consistency and reproducibility in your project.
+
+
+- What is `node_modules` ? Is it a good idea to push that on git?
+-   node_modules is a directory created by Node.js and npm (Node Package Manager) when you install dependencies for your Node.js project. It contains all the packages and their dependencies required by your project, as specified in your package.json file.
+    Here are some key points about node_modules:
+    Dependency Storage:
+    node_modules is where npm installs packages locally for your project. Each package is installed in its own directory within node_modules, along with its dependencies.
+    Project-Specific:
+    node_modules is specific to each individual project. It contains only the packages needed by that project, and the dependencies are not shared globally across your system.
+    Version Control:
+    It's generally not considered a good practice to include the node_modules directory in version control systems like Git.
+    node_modules can be very large, especially for projects with many dependencies, and including it in your repository can bloat the repository size and slow down operations like cloning and pulling.
+    Package Management:
+    Instead of including node_modules in version control, you should include only your package.json file. This file contains a list of dependencies and their versions, allowing others to install the same dependencies using npm install or yarn install commands.
+    Installation on Different Machines:
+    When another developer clones your repository, they can run npm install or yarn install to install the dependencies listed in your package.json file. This ensures that they get the same versions of the dependencies specified in your project.
+    Continuous Integration/Deployment (CI/CD):
+    In CI/CD pipelines, it's common to install dependencies as part of the build process using npm install or yarn install rather than relying on node_modules being included in the repository.
+    In summary, while node_modules is essential for managing project dependencies in Node.js projects, it's generally not recommended to include it in version control. Instead, you should include only your package.json file and let developers and build processes install the dependencies using package managers like npm or yarn. This helps keep your repository clean and manageable while ensuring consistency across different development environments.
+
+- What is the `dist` folder?
+- The dist folder, short for "distribution," is a commonly used directory in software development projects, particularly in web development. It typically contains the distributable or production-ready version of the project, which is optimized for deployment to a live environment.
+
+- What is `browserlists` ?
+- browserslist is a configuration file and query tool used by various front-end tools and libraries to target specific browsers and browser versions when transpiling, autoprefixing CSS, and determining compatibility of web features. It's widely used in modern web development workflows to ensure that web applications are compatible with the browsers targeted by the developers.
+    Here's how browserslist is typically used:
+    Configuration File:
+    Developers create a configuration file named .browserslistrc or define browser targets in the browserslist key of their package.json file.
+    This file lists the browsers and their versions that the project aims to support.
+    Usage in Tools:
+    Many front-end tools and libraries use browserslist to determine browser compatibility and adjust their behavior accordingly.
+    For example, Autoprefixer, a popular CSS vendor prefixing tool, uses browserslist to determine which browser prefixes to include in the generated CSS.
+    Queries:
+    Developers can also use the browserslist command-line tool or its JavaScript API to query for a list of browsers based on the configuration.
+    Queries can be made to get a list of browsers based on usage statistics (e.g., > 1% in global usage), specific browser versions, or custom queries.
+    Integration with Tools:
+    browserslist integrates seamlessly with various front-end tools and libraries like Autoprefixer, Babel, ESLint, PostCSS, and webpack.
+    These tools use the browserslist configuration to determine which browser features and optimizations to apply during the build process.
+    By using browserslist, developers can define a targeted set of browsers and browser versions that their web application should support. This helps ensure that the application's CSS, JavaScript, and other assets are compatible with the browsers used by their target audience, while also allowing them to take advantage of modern web features and optimizations where possible.
+
+- Difference between ^ - caret and ~ - tilda
+- In the context of semantic versioning (semver) and npm package versioning, the caret (^) and tilde (~) symbols have different meanings and behaviors when specifying version ranges for dependencies in a package.json file.
+    Here's a breakdown of the differences between the caret (^) and tilde (~) operators:
+    Caret (^):
+    The caret operator allows updates to the specified package up to, but not including, the next major version. It's also known as the "compatible with" operator.
+    When you specify a version range using the caret operator, npm will update the package to include any compatible version that is greater than or equal to the specified version, but less than the next major version.
+    Example: If you specify "^1.2.3", npm will allow updating to any version from 1.2.3 up to, but not including, 2.0.0.
+    Tilde (~):
+    The tilde operator restricts updates to the specified package to the most recent patch version (the third number in the version string). It allows patch-level updates, including bug fixes and patches, but prevents updates to the minor or major version.
+    When you specify a version range using the tilde operator, npm will update the package to include any compatible version with the same major and minor version numbers, but a higher patch version.
+    Example: If you specify "~1.2.3", npm will allow updating to any version from 1.2.3 up to, but not including, 1.3.0.
+    Comparison:
+    The caret operator allows for more aggressive updates, including updates to new minor versions, while still maintaining backward compatibility.
+    The tilde operator is more conservative and limits updates to bug fixes and patches within the same minor version.
+    The choice between the caret and tilde operators depends on your project's needs and how you want to manage dependencies. Use the caret for more flexibility but potentially riskier updates, and use the tilde for more conservative updates while maintaining compatibility with the same minor version.
+    In summary, the caret (^) and tilde (~) operators offer different approaches to specifying version ranges for dependencies, allowing developers to control the level of updates they want to accept in their projects.
+
+- Script types in html
+- This attribute indicates the type of script represented. The value of this attribute will be one of the following:
+    Attribute is not set (default), an empty string, or a JavaScript MIME type
+    Indicates that the script is a "classic script", containing JavaScript code. Authors are encouraged to omit the attribute if the script refers to JavaScript code rather than specify a MIME type. JavaScript MIME types are listed in the IANA media types specification.
+    importmap
+    This value indicates that the body of the element contains an import map. The import map is a JSON object that developers can use to control how the browser resolves module specifiers when importing JavaScript modules.
+    module
+    This value causes the code to be treated as a JavaScript module. The processing of the script contents is deferred. The charset and defer attributes have no effect. For information on using module, see our JavaScript modules guide. Unlike classic scripts, module scripts require the use of the CORS protocol for cross-origin fetching.
+    speculationrules Experimental
+    This value indicates that the body of the element contains speculation rules. Speculation rules take the form of a JSON object that determine what resources should be prefetched or prerendered by the browser. This is part of the Speculation Rules API.
+    Any other value
+    The embedded content is treated as a data block, and won't be processed by the browser. Developers must use a valid MIME type that is not a JavaScript MIME type to denote data blocks. All of the other attributes will be ignored, including the src attribute.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

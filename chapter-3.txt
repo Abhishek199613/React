@@ -1,0 +1,290 @@
+1. JSX in Depth: Fundamentally, JSX just provides syntactic sugar for the React.createElement(component, props, ...children) function. The JSX code:
+* Since JSX compiles into calls to React.createElement, the React library must also always be in scope from your JSX code.1
+
+import React from 'react';
+import CustomButton from './CustomButton';
+
+function WarningButton() {
+  // return React.createElement(CustomButton, {color: 'red'}, null);
+  return <CustomButton color="red" />;
+}
+
+2. JSX stands for JavaScript XML. It is a syntax extension for JavaScript, commonly used with React.js to describe what the UI should look like. JSX allows developers to write HTML-like code within JavaScript, which is then transpiled into regular JavaScript by tools like Babel before being interpreted by the browser.
+
+
+3. React.createElement vs JSX: 
+
+React.createElement and JSX are both ways to create React elements, but they differ in terms of syntax and readability.
+
+JSX:
+
+JSX is a syntax extension for JavaScript that allows you to write HTML-like code directly within your JavaScript files.
+It provides a more readable and declarative way to define the structure of your React components.
+JSX code is transformed into React.createElement() function calls during the build process using tools like Babel.
+JSX makes React code look more similar to traditional HTML, which can make it easier for developers, especially those familiar with web development.
+
+
+React.createElement:
+
+React.createElement() is a method provided by React that creates React elements programmatically.
+It takes at least three arguments: the type of element (string or React component), optional props object, and optional children elements.
+While JSX is more readable and feels more natural, React.createElement() offers a way to create React elements dynamically, which can be useful in certain situations.
+
+In practice, JSX is the preferred way to define React components in most cases because of its readability and ease of use. However, under the hood, JSX is transformed into React.createElement() calls, which means that both JSX and React.createElement() ultimately produce the same result: React elements. Developers typically use JSX for its convenience and familiarity with HTML-like syntax.
+
+
+4. Benefits of JSX: 
+
+
+JSX, or JavaScript XML, offers several benefits for developers working with React.js or other JSX-compatible frameworks:
+
+Readability: JSX resembles HTML syntax, making it more readable and intuitive for developers, especially those already familiar with web development. This familiarity reduces the learning curve for working with React.
+
+Expressiveness: JSX allows developers to write concise and expressive code to describe the structure of UI components. This makes it easier to understand the structure of the UI at a glance, leading to more maintainable and understandable codebases.
+
+Integrated Logic: JSX seamlessly integrates JavaScript logic within the markup, enabling developers to embed dynamic data, expressions, and control flow directly within JSX elements. This integration simplifies the process of rendering dynamic content and handling UI interactions.
+
+Tooling Support: JSX is widely supported by various development tools and libraries, including code editors, linters, and build tools like Babel and webpack. These tools provide syntax highlighting, code completion, and other features that enhance developer productivity when working with JSX.
+
+Static Type Checking: JSX works well with static type checking tools like TypeScript and Flow, allowing developers to catch type-related errors at compile time. This helps improve code quality and reduces the likelihood of runtime errors.
+
+Component Reusability: JSX facilitates the creation of reusable UI components, which can be composed and combined to build complex user interfaces. By encapsulating UI logic and presentation details within components, developers can achieve modularity and maintainability in their applications.
+
+Performance Optimization: JSX enables React to perform efficient updates to the DOM by leveraging its virtual DOM reconciliation algorithm. React uses JSX elements to build a lightweight representation of the DOM tree, which it then efficiently updates based on changes in state or props.
+
+Overall, JSX enhances the developer experience by providing a powerful and expressive syntax for building user interfaces in React.js and other JSX-compatible frameworks. Its readability, expressiveness, and integration with JavaScript make it a preferred choice for modern web development projects.
+
+
+5. Behind the Scenes of JSX: 
+
+Behind the scenes, JSX in React is transformed into regular JavaScript code using a process called transpilation. JSX is not directly understood by web browsers, so it needs to be converted into valid JavaScript code that browsers can interpret. Here's a simplified overview of what happens behind the scenes of JSX:
+
+Parsing: When you write JSX code in your React application, it first goes through a parsing step where the JSX syntax is converted into abstract syntax trees (AST). This parsing is typically done by tools like Babel, which is a JavaScript compiler.
+
+Transformation: Once the JSX code is parsed, it undergoes a transformation process. During this stage, JSX elements are transformed into React.createElement() function calls. Each JSX element, its attributes (props), and its children are converted into corresponding React.createElement() function calls with the appropriate arguments.
+
+React.createElement(): The React.createElement() function is a fundamental part of React. It creates a new React element of a specified type (e.g., HTML tag or React component) with the given properties (props) and children. The resulting React element is a plain JavaScript object that represents a virtual DOM node.
+
+Virtual DOM: Once the JSX code is transformed into React.createElement() calls, React uses these function calls to build a virtual DOM tree. The virtual DOM is a lightweight representation of the actual DOM structure. React compares the virtual DOM with the real DOM and efficiently updates only the parts of the DOM that have changed, minimizing unnecessary DOM manipulations for improved performance.
+
+Compilation: After the transformation process is complete, the transpiler (e.g., Babel) compiles the transformed JavaScript code into standard JavaScript that can be understood and executed by web browsers.
+
+Bundle and Deployment: Finally, the compiled JavaScript code, along with other assets like CSS and images, is bundled and optimized for deployment. Bundlers like webpack or Parcel combine all the necessary files into a single bundle that can be served to clients.
+
+In summary, JSX is a syntactic sugar that makes writing React components more intuitive and readable. However, under the hood, it is transformed into plain JavaScript code using tools like Babel before being executed in the browser. This transformation process allows developers to write code using JSX while still benefiting from the performance and compatibility of regular JavaScript.
+
+
+
+6. Babel & parcel role in JSX:
+
+Babel and Parcel both play significant roles in handling JSX code within a React application:
+
+Babel:
+
+Babel is a popular JavaScript compiler that allows developers to write code using the latest JavaScript features (ES6/ES7/ES8) without worrying about compatibility issues with older browsers.
+One of Babel's key functionalities is transforming JSX syntax into plain JavaScript.
+JSX, being a syntactic extension of JavaScript, is not natively understood by web browsers. Therefore, Babel converts JSX code into standard JavaScript using React.createElement() function calls.
+Babel plugins such as @babel/preset-react are specifically designed to handle JSX transformation along with other JavaScript transformations.
+
+Parcel:
+
+Parcel is a web application bundler that simplifies the process of building modern web applications by automating tasks like asset bundling, code transformation, and dependency resolution.
+Parcel supports JSX out of the box, meaning you can include JSX files in your project without any additional configuration.
+When you use Parcel to build your React application, it automatically detects JSX files and processes them through Babel for JSX transformation.
+Parcel also optimizes the build process by analyzing dependencies and generating efficient bundles for deployment.
+Additionally, Parcel offers features like hot module replacement (HMR), which enables fast development iteration by automatically updating the browser as you make changes to your code.
+In summary, Babel and Parcel work together to handle JSX within a React application. Babel transforms JSX syntax into plain JavaScript that browsers can understand, while Parcel automates the build process and optimizes the development workflow, including JSX transformation as part of its bundling process. Together, these tools streamline the development of React applications and ensure compatibility and performance across different browsers.
+
+
+7. Components: 
+
+In React, components are the building blocks of user interfaces. A component in React is a reusable piece of UI that can contain HTML-like markup, logic, and styling. Components allow developers to break down complex UIs into smaller, manageable pieces, making the codebase more modular, reusable, and easier to maintain.
+
+There are two main types of components in React:
+
+Functional Components:
+
+Functional components are JavaScript functions that accept props (short for properties) as arguments and return React elements.
+They are also known as stateless components because they don't have their own state.
+Functional components are simpler and more lightweight compared to class components and are often used for presenting UI based solely on props.
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+Class Components:
+
+Class components are JavaScript classes that extend the React.Component class.
+They have their own state, which allows them to manage data and respond to user input.
+Class components have a render() method that returns the React element(s) to be rendered.
+While class components are more feature-rich and can manage state and lifecycle methods, functional components with hooks have largely replaced them for most use cases.
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+
+
+8. Composing Components (Functional Component): 
+
+Composing components is a fundamental aspect of building user interfaces in React. It involves creating complex UIs by combining multiple smaller, reusable components together. Composing components allows developers to break down the UI into smaller, manageable pieces, making the codebase more modular and easier to maintain.
+Create Reusable Components:
+First, you create individual components that represent specific UI elements or functionalities. These components should be designed to be reusable and independent of each other. For example, you might have components like Header, Sidebar, Footer, Button, Input, Card, etc.
+
+Combine Components in Parent Components:
+Next, you combine these smaller components together to create larger, more complex components. This is done by rendering one component inside another component's JSX. The child components become part of the parent component's UI.
+
+
+ex : 
+import React from 'react';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import Content from './Content';
+import Footer from './Footer';
+
+function ParentComponent() {
+  return (
+    <div className="app">
+      <Header />
+      <div className="main">
+        <Sidebar />
+        <Content />
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+export default ParentComponent;
+
+Nested Composition: Components can be nested inside other components to create a hierarchy of UI elements. This allows for a structured and organized approach to building UIs.
+Ex: 
+// ParentComponent.js
+import React from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  return (
+    <div>
+      <ChildComponent>
+        <p>Child component content</p>
+      </ChildComponent>
+    </div>
+  );
+}
+
+export default ParentComponent;
+
+By composing smaller components together, developers can build complex user interfaces while maintaining code reusability, readability, and scalability. Composing components is a core principle in React development that helps in creating modular, maintainable, and efficient UIs.
+
+
+
+
+
+9. Superpowers of JSX: 
+
+
+JSX, the JavaScript XML syntax extension used primarily with React.js, offers several superpowers that contribute to its popularity and effectiveness in building modern web applications:
+
+Readability: JSX syntax closely resembles HTML, making it highly readable and intuitive for developers. It allows for a more declarative approach to defining the structure and behavior of UI components, which enhances code comprehension and maintainability.
+
+Expressiveness: JSX provides a concise and expressive syntax for describing complex UIs. It allows developers to embed JavaScript expressions, variables, and logic directly within the markup, enabling dynamic and interactive user interfaces.
+
+Component Reusability: JSX promotes the creation of reusable UI components, which can be composed and combined to build sophisticated user interfaces. By encapsulating UI logic and presentation details within components, JSX facilitates modularity, code reuse, and scalability.
+
+Tooling Support: JSX is well-supported by a variety of development tools and libraries, including code editors, linters, and build tools like Babel and webpack. These tools offer features such as syntax highlighting, code completion, and error checking, which streamline the development process and improve developer productivity.
+
+Integration with JavaScript Ecosystem: JSX seamlessly integrates with the broader JavaScript ecosystem, allowing developers to leverage existing JavaScript libraries, frameworks, and tools within their React applications. This interoperability enhances code flexibility, extensibility, and compatibility with third-party dependencies.
+
+Static Type Checking: JSX works seamlessly with static type checking tools like TypeScript and Flow, enabling developers to detect type-related errors and inconsistencies at compile time. This helps improve code quality, reliability, and maintainability by providing early feedback and preventing runtime errors.
+
+Performance Optimization: JSX enables React to optimize the rendering and updating of UI components through its virtual DOM reconciliation algorithm. By representing the UI as a lightweight virtual DOM tree, React can efficiently diff and update the actual DOM, minimizing unnecessary re-renders and enhancing application performance.
+
+Community and Ecosystem: JSX benefits from a vibrant and active community of developers, contributors, and enthusiasts. The React ecosystem offers a wealth of libraries, components, tutorials, and resources that empower developers to build powerful and innovative applications using JSX and React.js.
+
+Overall, JSX provides developers with a powerful and flexible tool for building modern web applications with React.js. Its combination of readability, expressiveness, reusability, and tooling support makes it a key enabler of front-end development and user interface design in the JavaScript ecosystem.
+
+
+
+
+10. Role of type attribute in script tag? What options can I use there?
+
+
+The type attribute in the <script> tag is used to specify the scripting language or content type of the script being embedded within the HTML document. It informs the browser about the type of script contained within the <script> tag, helping the browser to determine how to interpret and execute the script.
+
+The type attribute supports various values, including:
+
+Omitted or Empty String:
+
+If the type attribute is omitted or set to an empty string, the browser assumes that the script is JavaScript by default.
+For example:
+<script>
+  // JavaScript code
+</script>
+"text/javascript":
+
+Historically, JavaScript code has been declared using type="text/javascript". However, it's not required to include this attribute anymore as browsers treat scripts as JavaScript by default.
+For example:
+<script type="text/javascript">
+  // JavaScript code
+</script>
+"module":
+
+The "module" type is used for JavaScript modules. It indicates that the script is a JavaScript module and should be treated accordingly.
+Modules allow for the use of features like import and export, enabling better code organization and encapsulation.
+For example:
+<script type="module">
+  // JavaScript module code
+</script>
+Other MIME Types:
+
+Besides JavaScript, the type attribute can specify other MIME types, such as "text/css" for CSS or "application/json" for JSON data.
+However, it's less common to see other MIME types used in <script> tags.
+In modern web development, the default MIME type for <script> tags is JavaScript ("text/javascript"), and the "module" type is increasingly used with the adoption of JavaScript modules. In most cases, you don't need to explicitly specify the type attribute for JavaScript scripts unless you are using modules or other scripting languages.
+
+
+
+
+11. {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX:
+
+In JSX, {TitleComponent}, {<TitleComponent/>}, and {<TitleComponent></TitleComponent>} are different ways to render a React component named TitleComponent. While they may seem similar, there are subtle differences in how they are interpreted by JSX:
+
+{TitleComponent}:
+
+This syntax represents a reference to a component variable or expression. It doesn't create an instance of the component; instead, it refers to the component itself.
+You would typically use this syntax when passing the component as a prop or storing it in a variable.
+Example:
+const MyComponent = () => {
+  return (
+    <div>
+      {TitleComponent} {/* Reference to the TitleComponent */}
+    </div>
+  );
+};
+{<TitleComponent/>}:
+
+This syntax creates and renders an instance of the TitleComponent component using a self-closing tag.
+It's a concise way to render the component and is commonly used in JSX when you don't need to pass any props to the component.
+Example:
+const MyComponent = () => {
+  return (
+    <div>
+      <TitleComponent/> {/* Renders an instance of TitleComponent */}
+    </div>
+  );
+};
+{<TitleComponent></TitleComponent>}:
+
+This syntax is similar to {<TitleComponent/>}, but it explicitly uses an opening and closing tag to wrap the component's content.
+It's useful when you need to include child elements or content within the component.
+Example:
+const MyComponent = () => {
+  return (
+    <div>
+      <TitleComponent>
+        {/* Child elements or content */}
+        <h1>Title Content</h1>
+      </TitleComponent>
+    </div>
+  );
+};
+In summary, while all three syntaxes can be used to render a React component, they serve different purposes and have different implications. Choose the syntax that best fits the requirements of your component and the structure of your JSX code.
