@@ -1,0 +1,70 @@
+1. What is the difference between Named Export, Default export and * as export?
+   In JavaScript (and thus in React), there are different ways to export modules from files. These include named exports, default exports, and using * as syntax.
+
+    Named Export: With named exports, you can export multiple functions, variables, or classes from a single module. Each exported item is explicitly named, and to import them elsewhere, you need to use the same name to reference them. Here's an example:
+
+    // module.js
+    export const foo = () => { /* function logic */ };
+    export const bar = () => { /* function logic */ };
+
+    // otherFile.js
+    import { foo, bar } from './module';
+    Default Export: Default exports are used when you want to export a single function, variable, or class as the default export of a module. There can only be one default export per module. When importing a default export, you can choose any name you want. Here's an example:
+
+    // module.js
+    const baz = () => { /* function logic */ };
+    export default baz;
+    javascript
+    Copy code
+    // otherFile.js
+    import myFunction from './module';
+    * as Export: The * as syntax allows you to import all named exports from a module and assign them to a single object. This can be useful when you want to import many things from a module and keep them organized under a single namespace. Here's an example:
+
+    // module.js
+    export const foo = () => { /* function logic */ };
+    export const bar = () => { /* function logic */ };
+
+    // otherFile.js
+    import * as myModule from './module';
+    // Now you can access the exported items as properties of myModule
+    myModule.foo();
+    myModule.bar();
+    Each type of export has its own use case. Named exports are suitable when you have multiple items to export from a module and want to import them individually. Default exports are convenient when you want to export a single item from a module. * as exports are useful when you want to import everything from a module and keep them organized under a single namespace.
+
+
+2. What is the importance of config.js file ?
+   The config.js file, often referred to as a configuration file, is crucial in many software development projects. Its importance lies in centralizing and managing configuration parameters, constants, environment variables, or other settings used across the application.
+    Here are some key points highlighting the importance of a config.js file:
+    Centralized Configuration: Instead of scattering configuration values throughout your codebase, a config.js file allows you to consolidate all configuration options in one place. This enhances maintainability as it's easier to locate, update, and manage configurations when they are centralized.
+    Environment-specific Configuration: Many applications need to behave differently depending on the environment they are running in (e.g., development, testing, production). A config.js file can contain environment-specific settings, such as database URLs, API keys, or logging levels. By abstracting these settings into a separate file, you can easily switch between environments without modifying your application code.
+    Security: Storing sensitive information like database credentials or API keys directly in source code can be risky, especially if the code is shared or publicly accessible. A config.js file allows you to separate sensitive information from your codebase. You can then ensure that this file is not included in version control systems or is properly secured.
+    Ease of Deployment: By externalizing configurations, you can deploy your application to different environments without modifying the code. This promotes consistency across deployments and reduces the chance of errors introduced by manual configuration changes.
+    Testing and Debugging: Having a centralized configuration file simplifies testing and debugging processes. Test environments can use their own configuration settings, and troubleshooting becomes more straightforward as all relevant settings are easily accessible.
+    Scalability and Flexibility: As your application grows, you may need to add or update configurations. A config.js file provides a scalable approach to managing these changes. You can easily extend or modify configurations without having to refactor large portions of your codebase.
+    Overall, the config.js file serves as a cornerstone for managing configuration settings in a software project. It promotes maintainability, security, and flexibility, ultimately contributing to a smoother development and deployment process.
+
+
+3. What are React Hooks? 
+    React Hooks are functions that enable functional components in React to have stateful logic, lifecycle methods, and other features that were previously only available in class components. They were introduced in React version 16.8.
+    Prior to the introduction of hooks, React components were primarily written as class components. Class components have their own lifecycle methods and state management through the this keyword. However, class components can become complex and harder to understand, especially when dealing with stateful logic, lifecycle methods, and code reuse.
+    React Hooks provide a more elegant and concise way to manage state and lifecycle in functional components. They allow developers to reuse stateful logic without changing the component hierarchy or introducing complex patterns like Higher Order Components or Render Props.
+    Some of the most commonly used React Hooks include:
+    useState: Allows functional components to manage state. It returns a stateful value and a function to update that value, similar to this.state and this.setState in class components.
+    useEffect: Enables functional components to perform side effects (such as data fetching, DOM manipulation, or subscriptions) in a similar way to componentDidMount, componentDidUpdate, and componentWillUnmount lifecycle methods in class components.
+    useContext: Provides functional components access to the nearest context object defined by the React.createContext API.
+    useReducer: An alternative to useState for more complex state management. It accepts a reducer function and an initial state, and returns the current state and a dispatch function.
+    useCallback and useMemo: These hooks are used for performance optimization. useCallback memoizes a function, while useMemo memoizes a value.
+    useRef: Returns a mutable ref object whose current property is initialized to the passed argument. It's commonly used to access or store references to DOM elements.
+    Using hooks, functional components can now manage state, perform side effects, and utilize other React features without the need for class components. This has simplified React development and made functional components the preferred choice for writing React components in many cases.
+   
+4. Why do we need a useState Hook? 
+    
+The useState Hook is essential in React functional components because it enables them to manage stateful logic. Before the introduction of Hooks, functional components were stateless and couldn't hold or manage their own state like class components.
+Here are several reasons why the useState Hook is necessary
+State Management: In React, state represents data that can change over time. It's crucial for building interactive and dynamic user interfaces. With the useState Hook, functional components can declare state variables and update them over the component's lifecycle.
+Simplicity and Clarity: Hooks promote a more straightforward and concise way of managing state compared to class components. With useState, you don't need to create a class, extend a base class, or use the this keyword to access state. Instead, you declare a state variable and a function to update it within the functional component body.
+Avoiding Class Components: While class components in React can also manage state using this.state and this.setState, they come with additional complexities and boilerplate code. Hooks provide a more functional programming paradigm, allowing developers to write more modular, reusable, and concise code without using classes.
+Encapsulation: State declared with useState is encapsulated within the component that declares it. This means that each component manages its state independently, making it easier to reason about and maintain
+Performance Optimization: The useState Hook comes with optimizations under the hood. React intelligently handles state updates and re-renders only the components affected by state changes, resulting in better performance compared to class components where re-renders might be less optimized.
+Functional Components: With the rise of functional components in React, the need for managing state within them became crucial. The useState Hook, along with other Hooks like useEffect, useContext, etc., allows functional components to have the same capabilities as class components, leading to more consistency and simplicity in React codebases.
+Overall, the useState Hook is fundamental for managing state within functional components, enabling developers to build powerful and maintainable React applications. It promotes a more functional programming style and simplifies the development process by avoiding class components and their associated complexities.

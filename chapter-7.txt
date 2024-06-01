@@ -1,0 +1,153 @@
+1. What are various ways to add images into our App? Explain with code examples ?
+   
+    In a React app, there are several ways to add images:
+
+    Importing images directly into components: You can import images directly into your React components using ES6 import statements. For example:
+    import React from 'react';
+    import myImage from './myImage.jpg';
+
+    const MyComponent = () => {
+        return <img src={myImage} alt="My Image" />;
+    }
+
+    export default MyComponent;
+    Using public folder: You can place your images in the public folder of your React app, and then reference them directly in your components. For example:
+
+    const MyComponent = () => {
+        return <img src="/myImage.jpg" alt="My Image" />;
+    }
+
+
+    Using require(): You can also use require() to dynamically import images in your React components. For example:
+    const myImage = require('./myImage.jpg');
+
+    const MyComponent = () => {
+        return <img src={myImage} alt="My Image" />;
+    }
+
+
+    Using CSS: You can set the background image of an element using CSS. This is particularly useful when you want to apply styles to the image. For example:
+    import React from 'react';
+    import './MyComponent.css'; // Import CSS file
+
+    const MyComponent = () => {
+        return <div className="image-container"></div>;
+    }
+
+    export default MyComponent;
+    .image-container {
+        background-image: url('./myImage.jpg');
+        width: 100px;
+        height: 100px;
+    }
+    Each of these methods has its own advantages and use cases, so choose the one that fits your requirements and project structure best.
+
+
+    2. What would happen if we do console.log(useState())?       
+    If you call console.log(useState()), it would print an array containing two elements. The first element is the current state value, and the second element is a function to update the state.
+
+    Here's what the output would look like:
+
+    [initialStateValue, function]
+    For example, if you have a state initialized like this:
+
+    const [count, setCount] = useState(0);
+    Calling console.log(useState()) would output something like:
+
+    [0, function]
+    However, it's worth noting that directly logging useState() like this is not a typical usage pattern. It's more common to destructure the returned array immediately to access the state value and update function separately, as shown in the example with count and setCount.
+
+
+    3. How will useEffect behave if we don't add a dependency array ?
+       If you don't provide a dependency array to the useEffect hook, it will run on every render cycle of the component. This means that the effect will be executed both after the initial render and after every update.
+
+        Here's a breakdown of the behavior:
+
+        Initial render: The effect will run after the component is first rendered to the DOM.
+        Subsequent renders: After each subsequent render caused by changes in state or props, the effect will run again.
+        Not specifying a dependency array can lead to performance issues in certain scenarios, especially if the effect involves heavy computations or interactions with external resources (like fetching data from an API). This is because the effect will be triggered on every render, potentially causing unnecessary re-renders or redundant API calls.
+
+        If you want the effect to run only once after the initial render, you can pass an empty dependency array []:
+
+        useEffect(() => {
+            // Effect code here
+        }, []); // Empty dependency array
+        If you want the effect to run only when certain values change, you can include those values in the dependency array:
+
+        const [count, setCount] = useState(0);
+
+        useEffect(() => {
+            // Effect code here
+            console.log("Count changed:", count);
+        }, [count]); // Dependency array with 'count'
+        In summary, while omitting the dependency array can be useful in certain scenarios, it's important to be aware of its implications and carefully consider whether it aligns with the intended behavior of your component.
+
+4. What is SPA?
+    SPA stands for Single Page Application. It's a web application or website that interacts with the user by dynamically rewriting the current web page with new data from the web server, instead of loading entire new pages from the server.
+
+    In a traditional multi-page application (MPA), each user action typically results in a request to the server, which responds by loading a new page. This process often involves reloading the entire page, including its layout and resources.
+
+    In contrast, a Single Page Application loads a single HTML page initially and then updates the content dynamically as the user interacts with the application. This is typically achieved using JavaScript frameworks like React, Angular, or Vue.js, which manage the rendering and state of the application on the client side.
+
+    Advantages of SPAs include:
+
+    Faster navigation: Since SPAs only load data, not entire pages, navigation between sections of the application is often faster and smoother.
+    Better user experience: SPAs can provide a more seamless and interactive user experience, as they can update content dynamically without requiring full page reloads.
+    Reduced server load: SPAs can reduce the load on the server, as they often require fewer requests for page resources.
+    Support for offline mode: SPAs can be designed to work offline by caching resources and data locally.
+    However, SPAs also have some drawbacks, such as:
+
+    Initial load time: SPAs may require a longer initial load time, as they need to download the entire application code upfront.
+    SEO challenges: SPAs can present challenges for search engine optimization (SEO), as search engine crawlers may have difficulty indexing dynamic content loaded via JavaScript.
+    Client-side security concerns: Since much of the application logic runs on the client side, SPAs may be more vulnerable to certain types of security threats, such as cross-site scripting (XSS) attacks.
+    Overall, SPAs offer a modern and responsive approach to web development, but it's important to carefully consider the specific requirements and trade-offs when choosing this architecture for a project.
+
+5.  What is difference between Client Side Routing and Server Side Routing?
+    Client-side routing and server-side routing are two different approaches for handling navigation and routing within web applications. Here's a comparison of the two:
+
+    Client-Side Routing:
+    Definition: In client-side routing, navigation and routing are handled entirely on the client side, typically within the browser, using JavaScript frameworks or libraries like React Router, Vue Router, or Angular Router.
+    How it works: When a user clicks on a link or interacts with the application, the router intercepts the URL change and renders the appropriate component without making a request to the server. This means that only the necessary data or resources for that particular route are fetched, and the page content is updated dynamically without a full page refresh.
+    Advantages:
+    Faster navigation: Since client-side routing doesn't involve requests to the server for each route change, navigation between pages or components within the application is often faster and smoother.
+    Better user experience: Client-side routing enables a more seamless and interactive user experience, as it allows for dynamic updates without full page reloads.
+    Disadvantages:
+    SEO challenges: Search engine crawlers may have difficulty indexing dynamic content loaded via JavaScript, potentially impacting search engine rankings.
+    Initial load time: Client-side routing may require a longer initial load time, as the entire application code needs to be downloaded upfront.
+    Client-side security concerns: Since much of the routing logic runs on the client side, SPAs may be more vulnerable to certain types of security threats, such as cross-site scripting (XSS) attacks.
+    Server-Side Routing:
+    Definition: In server-side routing, navigation and routing are handled by the web server, which generates and returns the appropriate HTML content for each requested URL.
+    How it works: When a user requests a new page or resource by navigating to a different URL, the browser sends a request to the server, which responds by returning the corresponding HTML page. Each page load typically involves a full page refresh.
+    Advantages:
+    Better SEO: Server-side routing can be more SEO-friendly, as the server returns fully-rendered HTML pages that are easier for search engine crawlers to index.
+    Simplicity: Server-side routing can be simpler to implement and manage, especially for smaller applications with fewer dynamic components.
+    Disadvantages:
+    Slower navigation: Server-side routing often results in slower navigation between pages, as each route change requires a full page reload and a new request to the server.
+    Limited interactivity: Server-side routing may limit the interactivity and responsiveness of the application, as it relies on full page reloads for each route change.
+    In summary, client-side routing offers faster and more dynamic navigation within web applications, while server-side routing may be more suitable for applications with SEO requirements or simpler routing needs. The choice between the two approaches depends on factors such as application complexity, performance requirements, and SEO considerations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

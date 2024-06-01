@@ -1,0 +1,445 @@
+{
+    "card": {
+        "@type": "type.googleapis.com/swiggy.presentation.food.v2.MenuCarousel",
+        "title": "Top Picks",
+        "carousel": [
+            {
+                "type": "TopCarousel",
+                "subtype": "image",
+                "bannerId": "1965561",
+                "creativeId": "TopPicks/ChPanSizzle",
+                "title": "Chilli Paneer Sizzle",
+                "description": " ",
+                "fontColor": "#FFFFFF",
+                "dish": {
+                    "info": {
+                        "id": "133110781",
+                        "name": "Chilli Paneer Sizzle",
+                        "category": "Flavour Fun Range.",
+                        "description": "Pizza topped with spiced paneer, a spicy schezwan sauce, juicy tomato, crunchy onion & capsicum and cheesy dressing (298 Kcal/100g) Contains Cereals containing Gluten (Wheat), Soya and Milk & Milk Products.",
+                        "imageId": "fc2d0de600d6649eaea5ca50d84ab5ec",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "variants": {},
+                        "variantsV2": {
+                            "variantGroups": [
+                                {
+                                    "groupId": "37434932",
+                                    "name": "Size",
+                                    "variations": [
+                                        {
+                                            "name": "Personal",
+                                            "default": 1,
+                                            "id": "117089296",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "isEnabled": 1,
+                                            "dependantVariation": {
+                                                "groupId": "37434933",
+                                                "variationId": "117089297"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "groupId": "37434933",
+                                    "name": "Choose your Crust",
+                                    "variations": [
+                                        {
+                                            "name": "Pan",
+                                            "price": 199,
+                                            "default": 1,
+                                            "id": "117089297",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "isEnabled": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "pricingModels": [
+                                {
+                                    "variations": [
+                                        {
+                                            "groupId": "37434932",
+                                            "variationId": "117089296"
+                                        },
+                                        {
+                                            "groupId": "37434933",
+                                            "variationId": "117089297"
+                                        }
+                                    ],
+                                    "price": 19900
+                                }
+                            ]
+                        },
+                        "itemAttribute": {
+                            "vegClassifier": "VEG"
+                        },
+                        "defaultPrice": 19900,
+                        "ribbon": {
+                            "text": "Bestseller",
+                            "textColor": "#ffffff",
+                            "topBackgroundColor": "#d53d4c",
+                            "bottomBackgroundColor": "#b02331"
+                        },
+                        "itemBadge": {},
+                        "badgesV2": {},
+                        "isBestseller": true,
+                        "itemPriceStrikeOff": true
+                    },
+                    "analytics": {},
+                    "hideRestaurantDetails": true
+                }
+            },
+            {
+                "type": "TopCarousel",
+                "subtype": "image",
+                "bannerId": "1966638",
+                "creativeId": "TopPicks/ClaOniCaps",
+                "title": "Classic Onion Capsicum",
+                "description": " ",
+                "fontColor": "#FFFFFF",
+                "dish": {
+                    "info": {
+                        "id": "107428773",
+                        "name": "Classic Onion Capsicum",
+                        "category": "Flavour Fun Range.",
+                        "description": "Serves 1 | Personal pizza topped with our classic pan sauce, crunchy onion & capsicum and cheesy dressing (307 Kcal/100g) Contains Cereals containing Gluten (Wheat), Soya and Milk & Milk Products.",
+                        "imageId": "ed6a84173f69cdd4f676e94c2332c5e7",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "variants": {},
+                        "variantsV2": {
+                            "variantGroups": [
+                                {
+                                    "groupId": "23329726",
+                                    "name": "Size",
+                                    "variations": [
+                                        {
+                                            "name": "Personal",
+                                            "default": 1,
+                                            "id": "75984692",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "isEnabled": 1,
+                                            "dependantVariation": {
+                                                "groupId": "23329727",
+                                                "variationId": "75984694"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "groupId": "23329727",
+                                    "name": "Choose your Crust",
+                                    "variations": [
+                                        {
+                                            "name": "Pan",
+                                            "price": 119,
+                                            "default": 1,
+                                            "id": "75984694",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "isEnabled": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "pricingModels": [
+                                {
+                                    "variations": [
+                                        {
+                                            "groupId": "23329726",
+                                            "variationId": "75984692"
+                                        },
+                                        {
+                                            "groupId": "23329727",
+                                            "variationId": "75984694"
+                                        }
+                                    ],
+                                    "price": 11900,
+                                    "addonCombinations": [
+                                        {
+                                            "groupId": "87719707",
+                                            "addonId": "74222932"
+                                        },
+                                        {
+                                            "groupId": "87719707",
+                                            "addonId": "97877301"
+                                        },
+                                        {
+                                            "groupId": "87719707",
+                                            "addonId": "97877302"
+                                        },
+                                        {
+                                            "groupId": "87719707",
+                                            "addonId": "115289294"
+                                        },
+                                        {
+                                            "groupId": "87719707",
+                                            "addonId": "97877304"
+                                        },
+                                        {
+                                            "groupId": "87719707",
+                                            "addonId": "97877305"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "addons": [
+                            {
+                                "groupId": "87719707",
+                                "groupName": "Make it a Meal",
+                                "choices": [
+                                    {
+                                        "id": "74222932",
+                                        "name": "Pepsi Pet Bottle",
+                                        "price": 5700,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "id": "97877301",
+                                        "name": "Classic BreadStix : Flat Rs 20 Off",
+                                        "price": 9900,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "id": "97877302",
+                                        "name": "Cheese Garlic Bread : Flat Rs 20 Off",
+                                        "price": 13900,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "id": "115289294",
+                                        "name": "Loaded BreadStix : Flat Rs 20 Off",
+                                        "price": 14900,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "id": "97877304",
+                                        "name": "Zesty Paneer Pocket : Flat Rs 20 Off",
+                                        "price": 10900,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "id": "97877305",
+                                        "name": "Choco Volcano : Flat Rs 20 Off",
+                                        "price": 10900,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    }
+                                ],
+                                "maxAddons": 6,
+                                "maxFreeAddons": -1
+                            }
+                        ],
+                        "itemAttribute": {
+                            "vegClassifier": "VEG",
+                            "portionSize": "Serves 1"
+                        },
+                        "defaultPrice": 11900,
+                        "ribbon": {
+                            "text": "Bestseller",
+                            "textColor": "#ffffff",
+                            "topBackgroundColor": "#d53d4c",
+                            "bottomBackgroundColor": "#b02331"
+                        },
+                        "itemBadge": {},
+                        "badgesV2": {},
+                        "isBestseller": true,
+                        "itemPriceStrikeOff": true
+                    },
+                    "analytics": {},
+                    "hideRestaurantDetails": true
+                }
+            },
+            {
+                "type": "TopCarousel",
+                "subtype": "image",
+                "bannerId": "1967789",
+                "creativeId": "TopPicks/ClasCorn",
+                "title": "Classic Corn",
+                "description": " ",
+                "fontColor": "#FFFFFF",
+                "dish": {
+                    "info": {
+                        "id": "107428768",
+                        "name": "Classic Corn",
+                        "category": "Flavour Fun Range.",
+                        "description": "Serves 1 | Personal pizza topped with our classic pan sauce, sweet corn and cheesy dressing. An all-time favorite (319 Kcal/100g) Contains Cereals containing Gluten (Wheat), Soya and Milk & Milk Products.",
+                        "imageId": "aed52ab0d028996e060b772f11ff31d8",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "variants": {},
+                        "variantsV2": {
+                            "variantGroups": [
+                                {
+                                    "groupId": "26288203",
+                                    "name": "Size",
+                                    "variations": [
+                                        {
+                                            "name": "Personal",
+                                            "default": 1,
+                                            "id": "83357212",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "isEnabled": 1,
+                                            "dependantVariation": {
+                                                "groupId": "26288204",
+                                                "variationId": "83357213"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "groupId": "26288204",
+                                    "name": "Choose your Crust",
+                                    "variations": [
+                                        {
+                                            "name": "Pan",
+                                            "price": 129,
+                                            "default": 1,
+                                            "id": "83357213",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "isEnabled": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "pricingModels": [
+                                {
+                                    "variations": [
+                                        {
+                                            "groupId": "26288203",
+                                            "variationId": "83357212"
+                                        },
+                                        {
+                                            "groupId": "26288204",
+                                            "variationId": "83357213"
+                                        }
+                                    ],
+                                    "price": 12900,
+                                    "addonCombinations": [
+                                        {
+                                            "groupId": "87719699",
+                                            "addonId": "74222932"
+                                        },
+                                        {
+                                            "groupId": "87719699",
+                                            "addonId": "97877301"
+                                        },
+                                        {
+                                            "groupId": "87719699",
+                                            "addonId": "97877302"
+                                        },
+                                        {
+                                            "groupId": "87719699",
+                                            "addonId": "115289294"
+                                        },
+                                        {
+                                            "groupId": "87719699",
+                                            "addonId": "97877304"
+                                        },
+                                        {
+                                            "groupId": "87719699",
+                                            "addonId": "97877305"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "addons": [
+                            {
+                                "groupId": "87719699",
+                                "groupName": "Make it a Meal",
+                                "choices": [
+                                    {
+                                        "id": "74222932",
+                                        "name": "Pepsi Pet Bottle",
+                                        "price": 5700,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "id": "97877301",
+                                        "name": "Classic BreadStix : Flat Rs 20 Off",
+                                        "price": 9900,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "id": "97877302",
+                                        "name": "Cheese Garlic Bread : Flat Rs 20 Off",
+                                        "price": 13900,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "id": "115289294",
+                                        "name": "Loaded BreadStix : Flat Rs 20 Off",
+                                        "price": 14900,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "id": "97877304",
+                                        "name": "Zesty Paneer Pocket : Flat Rs 20 Off",
+                                        "price": 10900,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "id": "97877305",
+                                        "name": "Choco Volcano : Flat Rs 20 Off",
+                                        "price": 10900,
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    }
+                                ],
+                                "maxAddons": 6,
+                                "maxFreeAddons": -1
+                            }
+                        ],
+                        "itemAttribute": {
+                            "vegClassifier": "VEG",
+                            "portionSize": "Serves 1"
+                        },
+                        "defaultPrice": 12900,
+                        "ribbon": {
+                            "text": "Bestseller",
+                            "textColor": "#ffffff",
+                            "topBackgroundColor": "#d53d4c",
+                            "bottomBackgroundColor": "#b02331"
+                        },
+                        "itemBadge": {},
+                        "badgesV2": {},
+                        "isBestseller": true,
+                        "itemPriceStrikeOff": true
+                    },
+                    "analytics": {},
+                    "hideRestaurantDetails": true
+                }
+            }
+        ]
+    }
+}
